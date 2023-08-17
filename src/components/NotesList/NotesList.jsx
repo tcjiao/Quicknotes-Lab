@@ -9,7 +9,10 @@ const NotesList = ({ notes }) => {
         ) : (
           <ul>
             {notes.map((note, index) => (
-              <li key={index}>{note.text}</li>
+              <li key={index}>
+                <p>Created at: {new Date(note.createdAt).toLocaleString()}</p>
+                <p>{note.text}</p>
+              </li>
             ))}
           </ul>
         )}
